@@ -79,14 +79,16 @@ public class MainFragment extends Fragment implements ShowsListAdapter.ShowClick
         connectivityHelper = new ConnectivityHelper(getActivity());
 
         getAllFavorites();
-
+        
+        showListSearch = showMainList;
+        
         recyclerView = layout.findViewById(R.id.showListMain);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
-        showListAdapter = new ShowsListAdapter(getActivity(), showMainList);
+        showListAdapter = new ShowsListAdapter(getActivity(), showListSearch);
 
         showListAdapter.setShowClickListener(this);
 
